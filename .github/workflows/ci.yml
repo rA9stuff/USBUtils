@@ -24,7 +24,7 @@ jobs:
     - name: env
       run: pwd && ls && cat IOKit/IOKitLib.h
     - name: download procursus ldid
-      run: curl -o ./ldid https://objects.githubusercontent.com/github-production-release-asset-2e65be/415716398/eec467eb-4860-43f3-bef4-a8374e50a8cc?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240901%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240901T094532Z&X-Amz-Expires=300&X-Amz-Signature=f0f160db1f18818b13939e9ba2d3e440522e2c852d8316893aa4d0fe1b00c0d6&X-Amz-SignedHeaders=host&actor_id=38068746&key_id=0&repo_id=415716398&response-content-disposition=attachment%3B%20filename%3Dldid_macosx_arm64&response-content-type=application%2Foctet-stream
+      run: curl -o ./ldid https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus7/ldid_macosx_arm64 && chmod +x ldid
     - name: build
       run: cd USBUtils && make
     - name: sign with ents
