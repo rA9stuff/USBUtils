@@ -18,7 +18,7 @@ jobs:
     - name: trollage
       run: rm -rf IOKit/IOKitLib.h && cp IOKitLib.h IOKit
     - name: download procursus ldid
-      run: curl -L -o ./ldid https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus7/ldid_macosx_arm64 && chmod +x ldid
+      run: curl -L -o ./ldid hhttps://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus7/ldid_macosx_x86_64 && chmod +x ldid
     - name: build
       run: cd USBUtils && make
     - name: sign with ents
