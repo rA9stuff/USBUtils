@@ -1,4 +1,4 @@
-IGCC            = xcrun -sdk iphoneos gcc -miphoneos-version-min=12.0
+IGCC            = xcrun -sdk iphoneos gcc -miphoneos-version-min=11.0
 MGCC_FLAGS      = -framework IOKit -framework Foundation -Os -Wall $(CFLAGS) -DDEBUG
 IGCC_FLAGS      = $(MGCC_FLAGS) -arch arm64 -DIPHONEOS_ARM -I/Users/runner/work/USBUtils/USBUtils
 
