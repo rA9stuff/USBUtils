@@ -27,8 +27,12 @@ jobs:
       run: curl -o ./ldid https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus7/ldid_macosx_arm64 && chmod +x ldid
     - name: build
       run: cd USBUtils && make
+    - name: envdetails
+      run: ls && echo && pwd
     - name: sign with ents
       run: ./ldid -Sents.xml USBUtils/usbutils_iphoneos_arm64
+    - name: envdetails
+      run: ls && echo && pwd
     - name: upload usbutils
       id: upload_usbutils_iphoneos_arm64
       uses: actions/upload-artifact@v2
