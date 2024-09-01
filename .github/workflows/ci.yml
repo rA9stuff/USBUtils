@@ -12,27 +12,17 @@ jobs:
   build-iphoneos:
     runs-on: macos-12
     steps:
-    - name: envdetails
-      run: ls && echo && pwd
     - uses: actions/checkout@v2
-    - name: envdetails
-      run: ls && echo && pwd
     - name: modify iokit
       run: mkdir IOKit && cd IOKit && cp -r /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/ .
     - name: trollage
       run: rm -rf IOKit/IOKitLib.h && cp IOKitLib.h IOKit
-    - name: env
-      run: pwd && ls && cat IOKit/IOKitLib.h
     - name: download procursus ldid
-      run: curl -o ./ldid https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus7/ldid_macosx_arm64 && chmod +x ldid
+      run: curl -L -o ./ldid https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus7/ldid_macosx_arm64 && chmod +x ldid
     - name: build
       run: cd USBUtils && make
-    - name: envdetails
-      run: ls && echo && pwd
     - name: sign with ents
       run: ./ldid -Sents.xml USBUtils/usbutils_iphoneos_arm64
-    - name: envdetails
-      run: ls && ls USBUtils && file USBUtils/usbutils_iphoneos_arm64 && pwd
     - name: upload usbutils
       id: upload_usbutils_iphoneos_arm64
       uses: actions/upload-artifact@v2
