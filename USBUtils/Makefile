@@ -4,7 +4,7 @@ IGCC_FLAGS      = $(MGCC_FLAGS) -arch arm64 -DIPHONEOS_ARM -I/Users/runner/work/
 
 SOURCE          = \
                 main.m \
-                CalleeView.m \
+                CalleeObject.m \
                 USBUtils.m
 
 OUTPUT          = usbutils_iphoneos_arm64
