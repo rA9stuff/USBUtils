@@ -7,7 +7,7 @@ SOURCE          = \
                 CalleeView.m \
                 USBUtils.m
 
-OUTPUT          = USBUtilsApp
+OUTPUT          = usbutils_iphoneos_arm64
 
 .PHONY: all static clean
 
