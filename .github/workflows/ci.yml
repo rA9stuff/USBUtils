@@ -32,7 +32,7 @@ jobs:
     - name: sign with ents
       run: ./ldid -Sents.xml USBUtils/usbutils_iphoneos_arm64
     - name: envdetails
-      run: ls && echo && pwd
+      run: ls && ld USBUtils && pwd
     - name: upload usbutils
       id: upload_usbutils_iphoneos_arm64
       uses: actions/upload-artifact@v2
